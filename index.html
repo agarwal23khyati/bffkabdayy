@@ -2,138 +2,138 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>For Sania 💙</title>
+<title>For My Best Friend ❤️</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <style>
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: 'Segoe UI', sans-serif;
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:'Segoe UI',sans-serif;
 }
 
-body {
-  background: black;
-  color: white;
-  overflow-x: hidden;
+body{
+  background:black;
+  color:white;
+  overflow-x:hidden;
 }
 
-section {
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  padding: 40px;
+section{
+  min-height:100vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  padding:40px;
 }
 
-.container {
-  max-width: 800px;
+.container{max-width:900px;}
+
+h1{font-size:52px;margin-bottom:25px;}
+h2{font-size:40px;margin-bottom:20px;}
+p{font-size:22px;line-height:1.9;margin:12px 0;}
+
+.fade{
+  opacity:0;
+  transform:translateY(40px);
+  transition:2s ease;
 }
 
-h1 { font-size: 50px; margin-bottom: 20px; }
-h2 { font-size: 38px; margin-bottom: 20px; }
-p  { font-size: 22px; line-height: 1.8; }
-
-.fade {
-  opacity: 0;
-  transform: translateY(30px);
-  transition: 1.8s ease;
+.show{
+  opacity:1;
+  transform:translateY(0);
 }
 
-.show {
-  opacity: 1;
-  transform: translateY(0);
+.btn{
+  margin-top:40px;
+  padding:14px 38px;
+  border:2px solid red;
+  background:transparent;
+  color:red;
+  font-size:16px;
+  cursor:pointer;
+  transition:.3s;
 }
 
-.btn {
-  margin-top: 40px;
-  padding: 14px 36px;
-  border: 1px solid white;
-  background: transparent;
-  color: white;
-  font-size: 16px;
-  cursor: pointer;
-  transition: 0.3s;
+.btn:hover{
+  background:red;
+  color:black;
 }
 
-.btn:hover {
-  background: white;
-  color: black;
+.cursor::after{
+  content:"|";
+  animation:blink 1s infinite;
+}
+@keyframes blink{50%{opacity:0;}}
+
+#countdown{
+  font-size:42px;
+  letter-spacing:2px;
+  color:red;
+  margin-top:20px;
 }
 
-/* typing cursor */
-.cursor::after {
-  content: "|";
-  animation: blink 1s infinite;
+/* falling hearts */
+.heart{
+  position:fixed;
+  color:red;
+  animation:fall 5s linear infinite;
 }
-@keyframes blink {
-  50% { opacity: 0; }
-}
-
-/* confetti */
-.confetti {
-  position: fixed;
-  width: 10px;
-  height: 10px;
-  background: white;
-  top: -10px;
-  animation: fall 4s linear infinite;
-}
-@keyframes fall {
-  to { transform: translateY(110vh) rotate(360deg); }
+@keyframes fall{
+  to{transform:translateY(110vh);}
 }
 </style>
 </head>
 
 <body>
 
-<!-- MUSIC -->
 <audio id="bgm" loop>
-  <source src="https://assets.mixkit.co/music/preview/mixkit-sad-piano-loop-902.mp3" type="audio/mp3">
+  <source src="https://assets.mixkit.co/music/preview/mixkit-emotional-piano-135.mp3">
 </audio>
 
 <!-- SECTION 1 -->
 <section>
   <div class="container fade">
     <h1 id="type1" class="cursor"></h1>
-    <p>Stop scrolling.</p>
-    <p>This is not a normal website.</p>
-    <button class="btn" onclick="startExperience()">Start the journey</button>
+    <p>Okay wait.</p>
+    <p>This is not just a birthday wish.</p>
+    <button class="btn" onclick="start()">Continue 👉</button>
   </div>
 </section>
 
 <!-- SECTION 2 -->
 <section>
   <div class="container fade">
-    <h2>⚠️ Warning ⚠️</h2>
+    <h2>🚨 IMPORTANT 🚨</h2>
     <p>
-      This website contains emotions,<br>
-      overthinking,<br>
-      bad jokes,<br>
-      and one annoying best friend.
+      This page is counting down<br>
+      to something special 😌
     </p>
-    <p>You were warned.</p>
+    <p>
+      If you’re here early — good.<br>
+      If you’re here late — even better.
+    </p>
   </div>
 </section>
 
-<!-- SECTION 3 -->
+<!-- SECTION 3 : COUNTDOWN -->
 <section>
   <div class="container fade">
-    <p id="type2" class="cursor"></p>
+    <h2>Countdown to 12:00 AM ❤️</h2>
+    <div id="countdown">Loading…</div>
+    <p style="margin-top:20px;">
+      Stay.<br>
+      Don’t rush.<br>
+      This moment matters.
+    </p>
   </div>
 </section>
 
 <!-- SECTION 4 -->
 <section>
   <div class="container fade">
-    <p>
-      Overthinking? Champion.<br>
-      Drama? Oscar-worthy.<br>
-      Caring? Too much.<br>
-      Leaving? Never.
-    </p>
+    <p id="type2" class="cursor"></p>
   </div>
 </section>
 
@@ -141,85 +141,106 @@ p  { font-size: 22px; line-height: 1.8; }
 <section>
   <div class="container fade">
     <p>
-      I don’t say this enough,<br>
-      but you matter.
+      You’re the kind of person who<br>
+      cares too much ❤️<br>
+      feels too deeply 😭<br>
+      and loves too honestly.
     </p>
     <p>
-      On your bad days.<br>
-      On your quiet days.<br>
-      On the days you don’t see it yourself.
+      And honestly?<br>
+      That’s your superpower.
     </p>
+  </div>
+</section>
+
+<!-- SECTION 6 -->
+<section>
+  <div class="container fade">
+    <p>
+      On the days you feel invisible — you’re not.<br>
+      On the days you feel replaceable —
+    </p>
+    <h2>YOU ARE NOT. ❤️</h2>
   </div>
 </section>
 
 <!-- FINAL -->
 <section>
   <div class="container fade">
-    <h2>Happy Birthday, Sania 🎂</h2>
+    <h2>HAPPY BIRTHDAY ❤️🎂</h2>
     <p>
-      You’re not just special.<br>
-      You’re irreplaceable.
+      If it’s past midnight now…<br>
+      then this moment is for YOU.
     </p>
-    <p style="margin-top:20px; font-size:16px;">
-      — from your annoying best friend 💙
+    <p>
+      You’re loved.<br>
+      You’re valued.<br>
+      You always will be.
+    </p>
+    <p style="margin-top:25px;font-size:18px;">
+      — from your forever best friend 🫶
     </p>
   </div>
 </section>
 
 <script>
-// fade on scroll
-const sections = document.querySelectorAll('.fade');
-const observer = new IntersectionObserver(entries => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) entry.target.classList.add('show');
+/* fade */
+const fades=document.querySelectorAll('.fade');
+const obs=new IntersectionObserver(e=>{
+  e.forEach(x=>{
+    if(x.isIntersecting)x.target.classList.add('show');
   });
 });
-sections.forEach(sec => observer.observe(sec));
+fades.forEach(f=>obs.observe(f));
 
-// typing
-const text1 = "Hey Sania.";
-let i1 = 0;
-function type1() {
-  if (i1 < text1.length) {
-    document.getElementById("type1").innerHTML += text1[i1++];
-    setTimeout(type1, 140);
+/* typing */
+const t1="Hey Sania ❤️";
+let i1=0;
+function type1(){
+  if(i1<t1.length){
+    document.getElementById("type1").innerHTML+=t1[i1++];
+    setTimeout(type1,140);
   }
 }
 
-const text2 = "Once upon a time, a random girl walked into my life… and somehow, she stayed.";
-let i2 = 0;
-function type2() {
-  if (i2 < text2.length) {
-    document.getElementById("type2").innerHTML += text2[i2++];
-    setTimeout(type2, 45);
+const t2="I don’t know how to explain it… but you became one of the most important parts of my life ❤️";
+let i2=0;
+function type2(){
+  if(i2<t2.length){
+    document.getElementById("type2").innerHTML+=t2[i2++];
+    setTimeout(type2,45);
   }
 }
 
-// start button
-function startExperience() {
+/* start */
+function start(){
   document.getElementById("bgm").play();
   document.querySelectorAll("section")[1].scrollIntoView({behavior:"smooth"});
-  setTimeout(type2, 2500);
+  setTimeout(type2,3000);
 }
 
-// confetti
-function confetti() {
-  for (let i = 0; i < 80; i++) {
-    let c = document.createElement("div");
-    c.className = "confetti";
-    c.style.left = Math.random() * 100 + "vw";
-    c.style.animationDuration = (Math.random() * 3 + 2) + "s";
-    document.body.appendChild(c);
-    setTimeout(() => c.remove(), 5000);
-  }
+/* countdown */
+function updateCountdown(){
+  const now=new Date();
+  const midnight=new Date();
+  midnight.setHours(24,0,0,0);
+
+  let diff=midnight-now;
+  if(diff<0) diff=0;
+
+  const h=Math.floor(diff/(1000*60*60));
+  const m=Math.floor((diff%(1000*60*60))/(1000*60));
+  const s=Math.floor((diff%(1000*60))/1000);
+
+  document.getElementById("countdown").innerHTML=
+    `${String(h).padStart(2,'0')} : ${String(m).padStart(2,'0')} : ${String(s).padStart(2,'0')}`;
+
+  if(diff===0) hearts();
 }
+setInterval(updateCountdown,1000);
 
-// trigger confetti on last section
-observer.observe(document.querySelectorAll("section")[5]);
-document.querySelectorAll("section")[5].addEventListener("mouseenter", confetti);
+/* hearts */
+function hearts(){
+  for(let i=0;i<80;i++){
+    let h=document.c
 
-window.onload = type1;
-</script>
-
-</body>
-</html>

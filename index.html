@@ -2,68 +2,41 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Happy Birthday ❤️</title>
+<title>SANIAAAAA ❤️</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <style>
-*{
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
-  font-family:'Segoe UI',sans-serif;
-}
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Segoe UI',sans-serif;}
+body{background:black;color:white;}
+section{min-height:100vh;display:flex;align-items:center;justify-content:center;text-align:center;padding:40px;}
+.container{max-width:900px;}
 
-body{
-  background:black;
-  color:white;
-}
+h1{font-size:60px;margin-bottom:20px;}
+h2{font-size:42px;margin-bottom:20px;}
+p{font-size:22px;line-height:2;margin:14px 0;}
 
-section{
-  min-height:100vh;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  text-align:center;
-  padding:40px;
-}
-
-.container{
-  max-width:900px;
-}
-
-h1{font-size:52px;margin-bottom:20px;}
-h2{font-size:40px;margin-bottom:20px;}
-p{
-  font-size:22px;
-  line-height:2;
-  margin:14px 0;
-}
+.red{color:red;}
 
 .btn{
   margin-top:40px;
-  padding:14px 38px;
+  padding:16px 42px;
   border:2px solid red;
   background:transparent;
   color:red;
-  font-size:16px;
+  font-size:18px;
   cursor:pointer;
 }
+.btn:hover{background:red;color:black;}
 
-.btn:hover{
-  background:red;
-  color:black;
+#countdown{font-size:46px;color:red;margin-top:20px;}
+
+.heart{
+  font-size:50px;
+  cursor:pointer;
+  animation:pulse 1.2s infinite;
 }
-
-.cursor::after{
-  content:"|";
-  animation:blink 1s infinite;
-}
-@keyframes blink{50%{opacity:0;}}
-
-#countdown{
-  font-size:42px;
-  color:red;
-  margin-top:20px;
+@keyframes pulse{
+  50%{transform:scale(1.2);}
 }
 
 /* confetti */
@@ -83,54 +56,90 @@ p{
 
 <body>
 
+<audio id="song">
+  <source src="https://assets.mixkit.co/music/preview/mixkit-happy-birthday-to-you-108.mp3">
+</audio>
+
 <!-- INTRO -->
 <section>
   <div class="container">
-    <h1 id="type1" class="cursor"></h1>
-    <p>Okay listen.</p>
-    <p>This is not some cute one-line wish.</p>
-    <button class="btn" onclick="go()">Continue 👉</button>
+    <h1 class="red">SANIAAAAA ❤️</h1>
+    <p>Yes YOU.</p>
+    <p>Scroll karna band mat karna.</p>
+    <button class="btn" onclick="start()">START 👉</button>
   </div>
 </section>
 
 <!-- COUNTDOWN -->
 <section>
   <div class="container">
-    <h2>Countdown to 12:00 AM ❤️</h2>
+    <h2>Countdown to 5th January ❤️</h2>
     <div id="countdown">Loading…</div>
-    <p>Stay here. This moment is special.</p>
+    <p>Birthday ke liye thoda patience banta hai 😌</p>
   </div>
 </section>
 
-<!-- BIG MESSAGE -->
+<!-- SPAM -->
+<section>
+  <div class="container">
+    <h2 class="red">SANIA SANIA SANIA 😭❤️</h2>
+    <p>Saniaaaaaaaa</p>
+    <p>SANIAAAAAAAAAAAAA</p>
+    <p>Sania ❤️ Sania ❤️ Sania ❤️</p>
+    <p>If you’re smiling — GOOD 😈</p>
+  </div>
+</section>
+
+<!-- FUNNY TODO -->
+<section>
+  <div class="container">
+    <h2>🎯 Sania’s Birthday To-Do List</h2>
+    <p>☑ Wake up and be cute (automatic)</p>
+    <p>☑ Overthink unnecessarily</p>
+    <p>☑ Act surprised at wishes</p>
+    <p>☑ Eat cake 🎂</p>
+    <p>☑ Accept that you are loved ❤️</p>
+  </div>
+</section>
+
+<!-- BIG PARA -->
 <section>
   <div class="container">
     <p>
-      Sania, I don’t even know where to start, because honestly you’re one of those people
-      who slowly become important without announcing it. One day you’re just there,
-      and the next day you’re a part of everything. You’re the person I want to tell
-      random things to, the person I think of when something good or bad happens,
-      the person who somehow understands even when I don’t explain properly.
-      You care deeply, sometimes too deeply, and even when you pretend you don’t,
-      I know your heart feels everything. You’re strong, but not in the loud way —
-      in the quiet way where you keep going even when things get heavy.
-      You overthink, you doubt yourself, you underestimate how amazing you are,
-      and that honestly annoys me because if you could see yourself the way I see you,
-      you’d never question your worth. You make people feel safe, you make moments
-      feel lighter, and you leave an impact without even trying. I hope this year
-      gives you peace, love, happiness, and everything you’ve been silently hoping for.
-      And no matter what changes, no matter where life takes us, just know this —
-      you will always have me. Always. ❤️
+      Sania, honestly you are one of those people who quietly become everything.
+      You don’t try too hard, you don’t force your presence, and yet somehow
+      life feels incomplete without you. You care in ways people rarely notice,
+      you feel things deeply even when you pretend you don’t, and you love with
+      a sincerity that’s honestly rare. You doubt yourself way too much, you
+      underestimate how special you are, and that annoys me because if you could
+      see yourself through my eyes even once, you’d never question your worth again.
+      You make people feel safe, heard, and understood. You bring comfort without
+      trying and laughter without effort. I hope this year gives you everything
+      you’ve been quietly wishing for — peace, happiness, love, and moments that
+      make you stop and smile. No matter how chaotic life gets, just know this:
+      I’m always here, cheering for you, annoying you, and loving you endlessly.
+      Always. ❤️
     </p>
+  </div>
+</section>
+
+<!-- EASTER EGG -->
+<section>
+  <div class="container">
+    <h2>WAIT 😏</h2>
+    <p>See that heart below?</p>
+    <p><b>CLICK IT ❤️</b></p>
+    <div class="heart" onclick="easter()">❤️</div>
   </div>
 </section>
 
 <!-- FINAL -->
 <section>
   <div class="container">
-    <h2>HAPPY BIRTHDAY ❤️🎂</h2>
-    <p>You’re not just special.</p>
-    <p>You’re irreplaceable.</p>
+    <h2 class="red">HAPPY BIRTHDAY SANIA ❤️🎂</h2>
+    <p>You are loved.</p>
+    <p>You are special.</p>
+    <p>You are MY PERSON.</p>
     <p style="margin-top:20px;font-size:18px;">
       — your forever best friend 🫶
     </p>
@@ -138,44 +147,37 @@ p{
 </section>
 
 <script>
-/* typing */
-const t1="Hey Sania ❤️";
-let i1=0;
-function type1(){
-  if(i1<t1.length){
-    document.getElementById("type1").innerHTML+=t1[i1++];
-    setTimeout(type1,120);
-  }
-}
-
-/* scroll */
-function go(){
+function start(){
+  document.getElementById("song").play();
   document.querySelectorAll("section")[1].scrollIntoView({behavior:"smooth"});
 }
 
-/* countdown */
+/* countdown to 5 Jan */
 function updateCountdown(){
   const now=new Date();
-  const midnight=new Date();
-  midnight.setHours(24,0,0,0);
+  const year=now.getFullYear();
+  const target=new Date(year,0,5,0,0,0); // Jan = 0
+  if(now>target) target.setFullYear(year+1);
 
-  let diff=midnight-now;
-  if(diff<0) diff=0;
-
-  const h=Math.floor(diff/(1000*60*60));
-  const m=Math.floor((diff%(1000*60*60))/(1000*60));
-  const s=Math.floor((diff%(1000*60))/1000);
+  let diff=target-now;
+  const d=Math.floor(diff/(1000*60*60*24));
+  const h=Math.floor((diff/(1000*60*60))%24);
+  const m=Math.floor((diff/(1000*60))%60);
+  const s=Math.floor((diff/1000)%60);
 
   document.getElementById("countdown").innerHTML=
-    `${String(h).padStart(2,'0')} : ${String(m).padStart(2,'0')} : ${String(s).padStart(2,'0')}`;
-
-  if(diff===0) confetti();
+    `${d}d ${h}h ${m}m ${s}s`;
 }
 setInterval(updateCountdown,1000);
 
-/* confetti blast */
+/* easter egg */
+function easter(){
+  alert("I love you idiot ❤️😭");
+}
+
+/* confetti */
 function confetti(){
-  for(let i=0;i<150;i++){
+  for(let i=0;i<200;i++){
     let c=document.createElement("div");
     c.className="confetti";
     c.style.left=Math.random()*100+"vw";
@@ -184,11 +186,8 @@ function confetti(){
     setTimeout(()=>c.remove(),5000);
   }
 }
-
-window.onload=type1;
+setTimeout(confetti,5000);
 </script>
 
 </body>
 </html>
-
-

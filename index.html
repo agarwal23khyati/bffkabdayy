@@ -56,13 +56,28 @@
     }
   </style>
 </head>
+<script>
+  const text = "Hey Sania.";
+  let i = 0;
+
+  function typeEffect() {
+    if (i < text.length) {
+      document.getElementById("type").innerHTML += text.charAt(i);
+      i++;
+      setTimeout(typeEffect, 150);
+    }
+  }
+
+  window.onload = typeEffect;
+</script>
 
 <body>
 
   <!-- Landing -->
   <section>
     <div class="fade-in">
-      <h1>Hey Sania.</h1>
+      <h1 id="type"></h1>
+
       <p style="margin-top:20px;">Stop scrolling.</p>
       <p>This is not a normal website.</p>
 

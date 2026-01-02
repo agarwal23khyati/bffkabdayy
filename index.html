@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>For My Best Friend ❤️</title>
+<title>Happy Birthday ❤️</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <style>
@@ -16,7 +16,6 @@
 body{
   background:black;
   color:white;
-  overflow-x:hidden;
 }
 
 section{
@@ -28,11 +27,17 @@ section{
   padding:40px;
 }
 
-.container{max-width:900px;}
+.container{
+  max-width:900px;
+}
 
-h1{font-size:52px;margin-bottom:25px;}
+h1{font-size:52px;margin-bottom:20px;}
 h2{font-size:40px;margin-bottom:20px;}
-p{font-size:22px;line-height:1.9;margin:12px 0;}
+p{
+  font-size:22px;
+  line-height:2;
+  margin:14px 0;
+}
 
 .btn{
   margin-top:40px;
@@ -42,7 +47,6 @@ p{font-size:22px;line-height:1.9;margin:12px 0;}
   color:red;
   font-size:16px;
   cursor:pointer;
-  transition:.3s;
 }
 
 .btn:hover{
@@ -58,43 +62,34 @@ p{font-size:22px;line-height:1.9;margin:12px 0;}
 
 #countdown{
   font-size:42px;
-  letter-spacing:2px;
   color:red;
   margin-top:20px;
 }
 
-.heart{
+/* confetti */
+.confetti{
   position:fixed;
-  color:red;
-  animation:fall 5s linear infinite;
+  width:10px;
+  height:10px;
+  background:red;
+  top:-10px;
+  animation:fall 4s linear infinite;
 }
 @keyframes fall{
-  to{transform:translateY(110vh);}
+  to{transform:translateY(110vh) rotate(360deg);}
 }
 </style>
 </head>
 
 <body>
 
-<!-- SECTION 1 -->
+<!-- INTRO -->
 <section>
   <div class="container">
     <h1 id="type1" class="cursor"></h1>
-    <p>Okay wait.</p>
-    <p>This is not just a birthday wish.</p>
-    <button class="btn" onclick="start()">Continue 👉</button>
-  </div>
-</section>
-
-<!-- SECTION 2 -->
-<section>
-  <div class="container">
-    <h2>🚨 IMPORTANT 🚨</h2>
-    <p>
-      This page is counting down<br>
-      to something special 😌
-    </p>
-    <p>Stay. Don’t rush.</p>
+    <p>Okay listen.</p>
+    <p>This is not some cute one-line wish.</p>
+    <button class="btn" onclick="go()">Continue 👉</button>
   </div>
 </section>
 
@@ -103,14 +98,30 @@ p{font-size:22px;line-height:1.9;margin:12px 0;}
   <div class="container">
     <h2>Countdown to 12:00 AM ❤️</h2>
     <div id="countdown">Loading…</div>
-    <p>This moment matters.</p>
+    <p>Stay here. This moment is special.</p>
   </div>
 </section>
 
-<!-- MESSAGE -->
+<!-- BIG MESSAGE -->
 <section>
   <div class="container">
-    <p id="type2" class="cursor"></p>
+    <p>
+      Sania, I don’t even know where to start, because honestly you’re one of those people
+      who slowly become important without announcing it. One day you’re just there,
+      and the next day you’re a part of everything. You’re the person I want to tell
+      random things to, the person I think of when something good or bad happens,
+      the person who somehow understands even when I don’t explain properly.
+      You care deeply, sometimes too deeply, and even when you pretend you don’t,
+      I know your heart feels everything. You’re strong, but not in the loud way —
+      in the quiet way where you keep going even when things get heavy.
+      You overthink, you doubt yourself, you underestimate how amazing you are,
+      and that honestly annoys me because if you could see yourself the way I see you,
+      you’d never question your worth. You make people feel safe, you make moments
+      feel lighter, and you leave an impact without even trying. I hope this year
+      gives you peace, love, happiness, and everything you’ve been silently hoping for.
+      And no matter what changes, no matter where life takes us, just know this —
+      you will always have me. Always. ❤️
+    </p>
   </div>
 </section>
 
@@ -118,12 +129,9 @@ p{font-size:22px;line-height:1.9;margin:12px 0;}
 <section>
   <div class="container">
     <h2>HAPPY BIRTHDAY ❤️🎂</h2>
-    <p>
-      You are loved.<br>
-      You are special.<br>
-      You are MY PERSON ❤️
-    </p>
-    <p style="margin-top:25px;font-size:18px;">
+    <p>You’re not just special.</p>
+    <p>You’re irreplaceable.</p>
+    <p style="margin-top:20px;font-size:18px;">
       — your forever best friend 🫶
     </p>
   </div>
@@ -140,18 +148,9 @@ function type1(){
   }
 }
 
-const t2="I don’t know how you did it… but you became one of the most important people in my life ❤️";
-let i2=0;
-function type2(){
-  if(i2<t2.length){
-    document.getElementById("type2").innerHTML+=t2[i2++];
-    setTimeout(type2,45);
-  }
-}
-
-function start(){
+/* scroll */
+function go(){
   document.querySelectorAll("section")[1].scrollIntoView({behavior:"smooth"});
-  setTimeout(type2,3000);
 }
 
 /* countdown */
@@ -170,21 +169,19 @@ function updateCountdown(){
   document.getElementById("countdown").innerHTML=
     `${String(h).padStart(2,'0')} : ${String(m).padStart(2,'0')} : ${String(s).padStart(2,'0')}`;
 
-  if(diff===0) hearts();
+  if(diff===0) confetti();
 }
 setInterval(updateCountdown,1000);
 
-/* hearts */
-function hearts(){
-  for(let i=0;i<80;i++){
-    let h=document.createElement("div");
-    h.className="heart";
-    h.innerHTML="❤️";
-    h.style.left=Math.random()*100+"vw";
-    h.style.fontSize=(Math.random()*22+10)+"px";
-    h.style.animationDuration=(Math.random()*3+3)+"s";
-    document.body.appendChild(h);
-    setTimeout(()=>h.remove(),5000);
+/* confetti blast */
+function confetti(){
+  for(let i=0;i<150;i++){
+    let c=document.createElement("div");
+    c.className="confetti";
+    c.style.left=Math.random()*100+"vw";
+    c.style.animationDuration=(Math.random()*3+2)+"s";
+    document.body.appendChild(c);
+    setTimeout(()=>c.remove(),5000);
   }
 }
 
@@ -193,4 +190,5 @@ window.onload=type1;
 
 </body>
 </html>
+
 

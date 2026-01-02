@@ -34,17 +34,6 @@ h1{font-size:52px;margin-bottom:25px;}
 h2{font-size:40px;margin-bottom:20px;}
 p{font-size:22px;line-height:1.9;margin:12px 0;}
 
-.fade{
-  opacity:0;
-  transform:translateY(40px);
-  transition:2s ease;
-}
-
-.show{
-  opacity:1;
-  transform:translateY(0);
-}
-
 .btn{
   margin-top:40px;
   padding:14px 38px;
@@ -74,7 +63,6 @@ p{font-size:22px;line-height:1.9;margin:12px 0;}
   margin-top:20px;
 }
 
-/* falling hearts */
 .heart{
   position:fixed;
   color:red;
@@ -88,13 +76,9 @@ p{font-size:22px;line-height:1.9;margin:12px 0;}
 
 <body>
 
-<audio id="bgm" loop>
-  <source src="https://assets.mixkit.co/music/preview/mixkit-emotional-piano-135.mp3">
-</audio>
-
 <!-- SECTION 1 -->
 <section>
-  <div class="container fade">
+  <div class="container">
     <h1 id="type1" class="cursor"></h1>
     <p>Okay wait.</p>
     <p>This is not just a birthday wish.</p>
@@ -104,106 +88,59 @@ p{font-size:22px;line-height:1.9;margin:12px 0;}
 
 <!-- SECTION 2 -->
 <section>
-  <div class="container fade">
+  <div class="container">
     <h2>🚨 IMPORTANT 🚨</h2>
     <p>
       This page is counting down<br>
       to something special 😌
     </p>
-    <p>
-      If you’re here early — good.<br>
-      If you’re here late — even better.
-    </p>
+    <p>Stay. Don’t rush.</p>
   </div>
 </section>
 
-<!-- SECTION 3 : COUNTDOWN -->
+<!-- COUNTDOWN -->
 <section>
-  <div class="container fade">
+  <div class="container">
     <h2>Countdown to 12:00 AM ❤️</h2>
     <div id="countdown">Loading…</div>
-    <p style="margin-top:20px;">
-      Stay.<br>
-      Don’t rush.<br>
-      This moment matters.
-    </p>
+    <p>This moment matters.</p>
   </div>
 </section>
 
-<!-- SECTION 4 -->
+<!-- MESSAGE -->
 <section>
-  <div class="container fade">
+  <div class="container">
     <p id="type2" class="cursor"></p>
-  </div>
-</section>
-
-<!-- SECTION 5 -->
-<section>
-  <div class="container fade">
-    <p>
-      You’re the kind of person who<br>
-      cares too much ❤️<br>
-      feels too deeply 😭<br>
-      and loves too honestly.
-    </p>
-    <p>
-      And honestly?<br>
-      That’s your superpower.
-    </p>
-  </div>
-</section>
-
-<!-- SECTION 6 -->
-<section>
-  <div class="container fade">
-    <p>
-      On the days you feel invisible — you’re not.<br>
-      On the days you feel replaceable —
-    </p>
-    <h2>YOU ARE NOT. ❤️</h2>
   </div>
 </section>
 
 <!-- FINAL -->
 <section>
-  <div class="container fade">
+  <div class="container">
     <h2>HAPPY BIRTHDAY ❤️🎂</h2>
     <p>
-      If it’s past midnight now…<br>
-      then this moment is for YOU.
-    </p>
-    <p>
-      You’re loved.<br>
-      You’re valued.<br>
-      You always will be.
+      You are loved.<br>
+      You are special.<br>
+      You are MY PERSON ❤️
     </p>
     <p style="margin-top:25px;font-size:18px;">
-      — from your forever best friend 🫶
+      — your forever best friend 🫶
     </p>
   </div>
 </section>
 
 <script>
-/* fade */
-const fades=document.querySelectorAll('.fade');
-const obs=new IntersectionObserver(e=>{
-  e.forEach(x=>{
-    if(x.isIntersecting)x.target.classList.add('show');
-  });
-});
-fades.forEach(f=>obs.observe(f));
-
 /* typing */
 const t1="Hey Sania ❤️";
 let i1=0;
 function type1(){
   if(i1<t1.length){
     document.getElementById("type1").innerHTML+=t1[i1++];
-    setTimeout(type1,140);
+    setTimeout(type1,120);
   }
 }
 
-const t2="I don’t know how to explain it… but you became one of the most important parts of my life ❤️";
+const t2="I don’t know how you did it… but you became one of the most important people in my life ❤️";
 let i2=0;
 function type2(){
   if(i2<t2.length){
@@ -212,9 +149,7 @@ function type2(){
   }
 }
 
-/* start */
 function start(){
-  document.getElementById("bgm").play();
   document.querySelectorAll("section")[1].scrollIntoView({behavior:"smooth"});
   setTimeout(type2,3000);
 }
@@ -242,5 +177,20 @@ setInterval(updateCountdown,1000);
 /* hearts */
 function hearts(){
   for(let i=0;i<80;i++){
-    let h=document.c
+    let h=document.createElement("div");
+    h.className="heart";
+    h.innerHTML="❤️";
+    h.style.left=Math.random()*100+"vw";
+    h.style.fontSize=(Math.random()*22+10)+"px";
+    h.style.animationDuration=(Math.random()*3+3)+"s";
+    document.body.appendChild(h);
+    setTimeout(()=>h.remove(),5000);
+  }
+}
+
+window.onload=type1;
+</script>
+
+</body>
+</html>
 

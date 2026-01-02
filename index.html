@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>For Sania 💙</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    body {
+      background: #000;
+      color: #fff;
+      overflow-x: hidden;
+    }
+
+    section {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 40px;
+    }
+
+    .fade-in {
+      opacity: 0;
+      animation: fade 2s forwards;
+    }
+
+    @keyframes fade {
+      to {
+        opacity: 1;
+      }
+    }
+
+    .btn {
+      margin-top: 30px;
+      padding: 12px 30px;
+      border: 1px solid white;
+      background: transparent;
+      color: white;
+      font-size: 16px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .btn:hover {
+      background: white;
+      color: black;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Landing -->
+  <section>
+    <div class="fade-in">
+      <h1>Hey Sania.</h1>
+      <p style="margin-top:20px;">Stop scrolling.</p>
+      <p>This is not a normal website.</p>
+
+      <button class="btn" onclick="document.getElementById('start').scrollIntoView({behavior:'smooth'})">
+        Start the journey
+      </button>
+    </div>
+  </section>
+
+  <!-- Chapter 1 -->
+  <section id="start">
+    <div class="fade-in">
+      <h2>⚠️ Warning ⚠️</h2>
+      <p style="margin-top:20px;">
+        This website contains emotions,<br>
+        bad jokes,<br>
+        and one annoying best friend.
+      </p>
+      <p style="margin-top:20px;">You were warned.</p>
+    </div>
+  </section>
+
+</body>
+</html>

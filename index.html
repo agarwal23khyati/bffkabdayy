@@ -1,104 +1,225 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>For Sania 💙</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<title>For Sania 💙</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: 'Segoe UI', sans-serif;
-    }
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', sans-serif;
+}
 
-    body {
-      background: #000;
-      color: #fff;
-      overflow-x: hidden;
-    }
+body {
+  background: black;
+  color: white;
+  overflow-x: hidden;
+}
 
-    section {
-      min-height: 100vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      padding: 40px;
-    }
+section {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 40px;
+}
 
-    .fade-in {
-      opacity: 0;
-      animation: fade 2s forwards;
-    }
+.container {
+  max-width: 800px;
+}
 
-    @keyframes fade {
-      to {
-        opacity: 1;
-      }
-    }
+h1 { font-size: 50px; margin-bottom: 20px; }
+h2 { font-size: 38px; margin-bottom: 20px; }
+p  { font-size: 22px; line-height: 1.8; }
 
-    .btn {
-      margin-top: 30px;
-      padding: 12px 30px;
-      border: 1px solid white;
-      background: transparent;
-      color: white;
-      font-size: 16px;
-      cursor: pointer;
-      transition: 0.3s;
-    }
+.fade {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: 1.8s ease;
+}
 
-    .btn:hover {
-      background: white;
-      color: black;
-    }
-  </style>
+.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.btn {
+  margin-top: 40px;
+  padding: 14px 36px;
+  border: 1px solid white;
+  background: transparent;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.btn:hover {
+  background: white;
+  color: black;
+}
+
+/* typing cursor */
+.cursor::after {
+  content: "|";
+  animation: blink 1s infinite;
+}
+@keyframes blink {
+  50% { opacity: 0; }
+}
+
+/* confetti */
+.confetti {
+  position: fixed;
+  width: 10px;
+  height: 10px;
+  background: white;
+  top: -10px;
+  animation: fall 4s linear infinite;
+}
+@keyframes fall {
+  to { transform: translateY(110vh) rotate(360deg); }
+}
+</style>
 </head>
-<script>
-  const text = "Hey Sania.";
-  let i = 0;
-
-  function typeEffect() {
-    if (i < text.length) {
-      document.getElementById("type").innerHTML += text.charAt(i);
-      i++;
-      setTimeout(typeEffect, 150);
-    }
-  }
-
-  window.onload = typeEffect;
-</script>
 
 <body>
 
-  <!-- Landing -->
-  <section>
-    <div class="fade-in">
-      <h1 id="type"></h1>
+<!-- MUSIC -->
+<audio id="bgm" loop>
+  <source src="https://assets.mixkit.co/music/preview/mixkit-sad-piano-loop-902.mp3" type="audio/mp3">
+</audio>
 
-      <p style="margin-top:20px;">Stop scrolling.</p>
-      <p>This is not a normal website.</p>
+<!-- SECTION 1 -->
+<section>
+  <div class="container fade">
+    <h1 id="type1" class="cursor"></h1>
+    <p>Stop scrolling.</p>
+    <p>This is not a normal website.</p>
+    <button class="btn" onclick="startExperience()">Start the journey</button>
+  </div>
+</section>
 
-      <button class="btn" onclick="document.getElementById('start').scrollIntoView({behavior:'smooth'})">
-        Start the journey
-      </button>
-    </div>
-  </section>
+<!-- SECTION 2 -->
+<section>
+  <div class="container fade">
+    <h2>⚠️ Warning ⚠️</h2>
+    <p>
+      This website contains emotions,<br>
+      overthinking,<br>
+      bad jokes,<br>
+      and one annoying best friend.
+    </p>
+    <p>You were warned.</p>
+  </div>
+</section>
 
-  <!-- Chapter 1 -->
-  <section id="start">
-    <div class="fade-in">
-      <h2>⚠️ Warning ⚠️</h2>
-      <p style="margin-top:20px;">
-        This website contains emotions,<br>
-        bad jokes,<br>
-        and one annoying best friend.
-      </p>
-      <p style="margin-top:20px;">You were warned.</p>
-    </div>
-  </section>
+<!-- SECTION 3 -->
+<section>
+  <div class="container fade">
+    <p id="type2" class="cursor"></p>
+  </div>
+</section>
+
+<!-- SECTION 4 -->
+<section>
+  <div class="container fade">
+    <p>
+      Overthinking? Champion.<br>
+      Drama? Oscar-worthy.<br>
+      Caring? Too much.<br>
+      Leaving? Never.
+    </p>
+  </div>
+</section>
+
+<!-- SECTION 5 -->
+<section>
+  <div class="container fade">
+    <p>
+      I don’t say this enough,<br>
+      but you matter.
+    </p>
+    <p>
+      On your bad days.<br>
+      On your quiet days.<br>
+      On the days you don’t see it yourself.
+    </p>
+  </div>
+</section>
+
+<!-- FINAL -->
+<section>
+  <div class="container fade">
+    <h2>Happy Birthday, Sania 🎂</h2>
+    <p>
+      You’re not just special.<br>
+      You’re irreplaceable.
+    </p>
+    <p style="margin-top:20px; font-size:16px;">
+      — from your annoying best friend 💙
+    </p>
+  </div>
+</section>
+
+<script>
+// fade on scroll
+const sections = document.querySelectorAll('.fade');
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) entry.target.classList.add('show');
+  });
+});
+sections.forEach(sec => observer.observe(sec));
+
+// typing
+const text1 = "Hey Sania.";
+let i1 = 0;
+function type1() {
+  if (i1 < text1.length) {
+    document.getElementById("type1").innerHTML += text1[i1++];
+    setTimeout(type1, 140);
+  }
+}
+
+const text2 = "Once upon a time, a random girl walked into my life… and somehow, she stayed.";
+let i2 = 0;
+function type2() {
+  if (i2 < text2.length) {
+    document.getElementById("type2").innerHTML += text2[i2++];
+    setTimeout(type2, 45);
+  }
+}
+
+// start button
+function startExperience() {
+  document.getElementById("bgm").play();
+  document.querySelectorAll("section")[1].scrollIntoView({behavior:"smooth"});
+  setTimeout(type2, 2500);
+}
+
+// confetti
+function confetti() {
+  for (let i = 0; i < 80; i++) {
+    let c = document.createElement("div");
+    c.className = "confetti";
+    c.style.left = Math.random() * 100 + "vw";
+    c.style.animationDuration = (Math.random() * 3 + 2) + "s";
+    document.body.appendChild(c);
+    setTimeout(() => c.remove(), 5000);
+  }
+}
+
+// trigger confetti on last section
+observer.observe(document.querySelectorAll("section")[5]);
+document.querySelectorAll("section")[5].addEventListener("mouseenter", confetti);
+
+window.onload = type1;
+</script>
 
 </body>
 </html>

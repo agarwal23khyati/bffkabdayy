@@ -6,37 +6,105 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <style>
-*{margin:0;padding:0;box-sizing:border-box;font-family:'Segoe UI',sans-serif;}
-body{background:black;color:white;}
-section{min-height:100vh;display:flex;align-items:center;justify-content:center;text-align:center;padding:40px;}
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif;}
+body{
+  background:black;
+  color:white;
+  overflow-x:hidden;
+}
+
+/* sections */
+section{
+  min-height:100vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  padding:40px 20px;
+}
 .container{max-width:900px;}
 
-h1{font-size:60px;margin-bottom:20px;}
+/* GLOW TEXT */
+.glow{
+  color:red;
+  text-shadow:
+    0 0 10px rgba(255,0,0,0.6),
+    0 0 20px rgba(255,0,0,0.6),
+    0 0 40px rgba(255,0,0,0.8);
+}
+
+/* breathing glow for screenshots */
+.breathe{
+  animation:breathe 3s ease-in-out infinite;
+}
+@keyframes breathe{
+  0%,100%{text-shadow:0 0 10px red;}
+  50%{text-shadow:0 0 35px red;}
+}
+
+h1{font-size:64px;margin-bottom:20px;}
 h2{font-size:42px;margin-bottom:20px;}
 p{font-size:22px;line-height:2;margin:14px 0;}
 
-.red{color:red;}
-
 .btn{
-  margin-top:40px;
-  padding:16px 42px;
+  margin-top:30px;
+  padding:16px 45px;
   border:2px solid red;
   background:transparent;
   color:red;
   font-size:18px;
   cursor:pointer;
+  box-shadow:0 0 20px rgba(255,0,0,0.6);
 }
-.btn:hover{background:red;color:black;}
+.btn:hover{
+  background:red;
+  color:black;
+  box-shadow:0 0 40px red;
+}
 
-#countdown{font-size:46px;color:red;margin-top:20px;}
+#countdown{
+  font-size:48px;
+  margin-top:20px;
+}
 
+/* typewriter */
+.typewriter{
+  border-right:3px solid red;
+  white-space:nowrap;
+  overflow:hidden;
+  animation:blink 1s infinite;
+}
+@keyframes blink{50%{border-color:transparent;}}
+
+/* heart glow */
 .heart{
-  font-size:50px;
+  font-size:70px;
   cursor:pointer;
-  animation:pulse 1.2s infinite;
+  animation:heartGlow 1.4s infinite;
 }
-@keyframes pulse{
-  50%{transform:scale(1.2);}
+@keyframes heartGlow{
+  0%,100%{
+    text-shadow:0 0 10px red;
+    transform:scale(1);
+  }
+  50%{
+    text-shadow:0 0 40px red;
+    transform:scale(1.3);
+  }
+}
+
+/* floating SANIA */
+.name{
+  position:fixed;
+  font-size:18px;
+  color:red;
+  opacity:0.5;
+  text-shadow:0 0 10px red;
+  animation:float 8s linear infinite;
+}
+@keyframes float{
+  from{transform:translateY(100vh);}
+  to{transform:translateY(-120vh);}
 }
 
 /* confetti */
@@ -45,12 +113,16 @@ p{font-size:22px;line-height:2;margin:14px 0;}
   width:10px;
   height:10px;
   background:red;
+  box-shadow:0 0 10px red;
   top:-10px;
-  animation:fall 4s linear infinite;
+  animation:fall linear infinite;
 }
 @keyframes fall{
   to{transform:translateY(110vh) rotate(360deg);}
 }
+
+.hidden{display:none;}
+.small{font-size:16px;opacity:0.7;}
 </style>
 </head>
 
@@ -63,9 +135,8 @@ p{font-size:22px;line-height:2;margin:14px 0;}
 <!-- INTRO -->
 <section>
   <div class="container">
-    <h1 class="red">SANIAAAAA ❤️</h1>
-    <p>Yes YOU.</p>
-    <p>Scroll karna band mat karna.</p>
+    <h1 class="glow breathe">SANIAAAAA ❤️</h1>
+    <p id="tw" class="typewriter glow"></p>
     <button class="btn" onclick="start()">START 👉</button>
   </div>
 </section>
@@ -73,27 +144,39 @@ p{font-size:22px;line-height:2;margin:14px 0;}
 <!-- COUNTDOWN -->
 <section>
   <div class="container">
-    <h2>Countdown to 5th January ❤️</h2>
-    <div id="countdown">Loading…</div>
-    <p>Birthday ke liye thoda patience banta hai 😌</p>
+    <h2 class="glow">Countdown to your day ❤️</h2>
+    <p>5 January · 12:00 AM</p>
+    <div id="countdown" class="glow breathe">Loading…</div>
+  </div>
+</section>
+
+<!-- FEELS -->
+<section>
+  <div class="container">
+    <p>You are not random.</p>
+    <p>You are rare.</p>
+    <p class="glow breathe">You are unforgettable.</p>
   </div>
 </section>
 
 <!-- SPAM -->
 <section>
   <div class="container">
-    <h2 class="red">SANIA SANIA SANIA 😭❤️</h2>
-    <p>Saniaaaaaaaa</p>
-    <p>SANIAAAAAAAAAAAAA</p>
-    <p>Sania ❤️ Sania ❤️ Sania ❤️</p>
-    <p>If you’re smiling — GOOD 😈</p>
+    <h2 class="glow">SANIA SANIA SANIA 😭</h2>
+    <p>SANIAAAAA</p>
+    <p class="glow">S A N I A ❤️</p>
+    <p>SANIAAAAAAAAAAAAAA</p>
   </div>
 </section>
 
-<!-- FUNNY TODO -->
+<!-- TODO -->
 <section>
   <div class="container">
-    <h2>🎯 Sania’s Birthday To-Do List</h2>
+    <h2 class="glow">🎯 Birthday Rules</h2>
+    <p>☑ Smile</p>
+    <p>☑ Feel special</p>
+    <p>☑ Cake 🎂</p>
+    <p>☑ Accept love ❤️</p>
     <p>☑ Wake up and be cute (automatic)</p>
     <p>☑ Overthink unnecessarily</p>
     <p>☑ Act surprised at wishes</p>
@@ -102,10 +185,10 @@ p{font-size:22px;line-height:2;margin:14px 0;}
   </div>
 </section>
 
-<!-- BIG PARA -->
+<!-- EMOTIONAL -->
 <section>
   <div class="container">
-    <p>
+    <p class="breathe">
       Sania, honestly you are one of those people who quietly become everything.
       You don’t try too hard, you don’t force your presence, and yet somehow
       life feels incomplete without you. You care in ways people rarely notice,
@@ -123,61 +206,83 @@ p{font-size:22px;line-height:2;margin:14px 0;}
   </div>
 </section>
 
-<!-- EASTER EGG -->
+<!-- HEART -->
 <section>
   <div class="container">
-    <h2>WAIT 😏</h2>
-    <p>See that heart below?</p>
-    <p><b>CLICK IT ❤️</b></p>
-    <div class="heart" onclick="easter()">❤️</div>
+    <h2 class="glow">WAIT 😏</h2>
+    <p><b>CLICK THE HEART ❤️</b></p>
+    <div class="heart" onclick="unlock()">❤️</div>
   </div>
 </section>
 
-<!-- FINAL -->
+<!-- MIDNIGHT -->
+<section id="midnight" class="hidden">
+  <div class="container">
+    <h1 class="glow breathe">IT’S 12:00 AM ❤️</h1>
+    <p>Happy Birthday Sania 🎂</p>
+    <p>This moment was waiting just for you.</p>
+  </div>
+</section>
+
+<!-- END -->
 <section>
   <div class="container">
-    <h2 class="red">HAPPY BIRTHDAY SANIA ❤️🎂</h2>
-    <p>You are loved.</p>
-    <p>You are special.</p>
-    <p>You are MY PERSON.</p>
-    <p style="margin-top:20px;font-size:18px;">
-      — your forever best friend 🫶
-    </p>
+    <h1 class="glow">YOU ARE LOVED ❤️</h1>
+    <p class="small">— forever 🫶</p>
   </div>
 </section>
 
 <script>
+/* typewriter */
+const text="This is not a website. This is a feeling.";
+let i=0;
+function type(){
+  if(i<text.length){
+    document.getElementById("tw").innerHTML+=text.charAt(i);
+    i++; setTimeout(type,70);
+  }
+}
+type();
+
+/* start */
 function start(){
   document.getElementById("song").play();
-  document.querySelectorAll("section")[1].scrollIntoView({behavior:"smooth"});
+  document.querySelectorAll("section")[1]
+    .scrollIntoView({behavior:"smooth"});
+  spawnNames();
 }
 
-/* countdown to 5 Jan */
+/* countdown */
 function updateCountdown(){
   const now=new Date();
-  const year=now.getFullYear();
-  const target=new Date(year,0,5,0,0,0); // Jan = 0
+  let year=now.getFullYear();
+  let target=new Date(year,0,5,0,0,0);
   if(now>target) target.setFullYear(year+1);
 
   let diff=target-now;
-  const d=Math.floor(diff/(1000*60*60*24));
-  const h=Math.floor((diff/(1000*60*60))%24);
-  const m=Math.floor((diff/(1000*60))%60);
-  const s=Math.floor((diff/1000)%60);
+  let d=Math.floor(diff/(1000*60*60*24));
+  let h=Math.floor((diff/(1000*60*60))%24);
+  let m=Math.floor((diff/(1000*60))%60);
+  let s=Math.floor((diff/1000)%60);
 
   document.getElementById("countdown").innerHTML=
     `${d}d ${h}h ${m}m ${s}s`;
+
+  if(diff<0){
+    document.getElementById("midnight").classList.remove("hidden");
+  }
 }
 setInterval(updateCountdown,1000);
 
-/* easter egg */
-function easter(){
+/* heart */
+function unlock(){
   alert("I love you idiot ❤️😭");
+  confetti();
 }
 
 /* confetti */
 function confetti(){
-  for(let i=0;i<200;i++){
+  for(let i=0;i<300;i++){
     let c=document.createElement("div");
     c.className="confetti";
     c.style.left=Math.random()*100+"vw";
@@ -186,7 +291,18 @@ function confetti(){
     setTimeout(()=>c.remove(),5000);
   }
 }
-setTimeout(confetti,5000);
+
+/* floating names */
+function spawnNames(){
+  setInterval(()=>{
+    let n=document.createElement("div");
+    n.className="name";
+    n.innerText="SANIAAAAA ❤️";
+    n.style.left=Math.random()*100+"vw";
+    document.body.appendChild(n);
+    setTimeout(()=>n.remove(),8000);
+  },600);
+}
 </script>
 
 </body>
